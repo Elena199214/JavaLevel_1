@@ -56,11 +56,10 @@ public class BasicConstructions {
     private static boolean leapНear(int year) {
         boolean a = false;
         if (year % 4 == 0 && year % 100 != 0 || year == 400){
-            System.out.println(year + " год является високосным");
-            return true;
+            a = true;
         }
-        System.out.println(year + " год не високосный");
-        return false;
+        System.out.println(a);
+        return a;
     }
 
 
