@@ -6,18 +6,18 @@ public class WorkArrays {
 
     public static void main(String[] args) {
 
-        replacingNumbers();
-        fillArray();
-        selectiveMultiplication();
-        fillDiagonals(3);
-        initialValueArray(3, 111);
-        minMaxArray();
-
-        int[] array = {4, 1, 1, 2};
-        int[] array2 = {1, 1, 1, 1, 2};
+        int[] array = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        int[] array2 = {11, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         int[] array3 = {2, 2, 2, 1, 2, 2, 10, 1, 1};
         int[] array4 = {5, 2, 2, 3};
         int[] array5 = {10, 10};
+
+        replacingNumbers(array);
+        fillArray();
+        selectiveMultiplication(array2);
+        fillDiagonals(3);
+        initialValueArray(3, 111);
+        minMaxArray();
         checkBalance(array);
         checkBalance(array2);
         checkBalance(array3);
@@ -31,8 +31,7 @@ public class WorkArrays {
     /*1. Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ].
     С помощью цикла и условия заменить 0 на 1, 1 на 0;*/
 
-    private static void replacingNumbers() {
-        int[] array = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+    private static void replacingNumbers(int[] array) {
 
         for (int i = 0; i < array.length; i++) {
 
@@ -60,8 +59,7 @@ public class WorkArrays {
     }
 
     //3. Задать массив [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ] пройти по нему циклом, и числа меньшие 6 умножить на 2;
-    private static void selectiveMultiplication() {
-        int[] array = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+    private static void selectiveMultiplication(int[] array) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] < 6) {
                 array[i] = array[i] * 2;
@@ -99,9 +97,10 @@ public class WorkArrays {
     private static int[] initialValueArray(int len, int initialValue) {
         int[] array = new int[len];
 
-        for (int i = 0; i < len; ++i) {
-            array[i] = initialValue;
-        }
+//        for (int i = 0; i < len; ++i) {
+//            array[i] = initialValue;
+//        }
+        Arrays.fill(array, initialValue);
 
         System.out.println(Arrays.toString(array));
         return array;
