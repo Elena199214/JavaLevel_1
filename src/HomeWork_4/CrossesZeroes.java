@@ -10,7 +10,7 @@ public class CrossesZeroes {
     //Поле
     public static char[][] map;
     public static final int SIZE = 3;
-    public static final int DOTS_TO_WIN = 3;
+    public static final int DOTS_TO_WIN = 2;
     
     //Константы символы
     public static final char DOT_EMPTY = '*';
@@ -89,40 +89,54 @@ public class CrossesZeroes {
     }
 
     /**
-     * Наивная реализация.(для размера 3)
+     * Универсальная реализация.(для любого размера), для любого кол-ва выигрышных фишек
      * @param dot Х или О
      * @return победа или не до конца?
      */
 
+
     public static  boolean checkWin(char dot){
-        //проверка строк
-        if (map[0][0] == dot && map[0][1] == dot && map[0][2]== dot){
-            return true;
-        }
-        if (map[1][0] == dot && map[1][1] == dot && map[1][2]== dot){
-            return true;
-        }
-        if (map[2][0] == dot && map[2][1] == dot && map[2][2]== dot){
-            return true;
-        }
-        //проверка столбцов
-        if(map[0][0] == dot && map [1][0]== dot && map [2][0] == dot){
-            return true;
-        }
-        if(map[0][1] == dot && map [1][1]== dot && map [2][1] == dot){
-            return true;
-        }
-        if(map[0][2] == dot && map [1][2]== dot && map [2][2] == dot){
-            return true;
+
+    //проверка по диагонали
+        int count=1;
+
+        for (int i = 0; i < SIZE-1; i++) {
+            if ((map[i][i]==dot)&&(map[i][i]==map[i+1][i+1])|| (map[i][SIZE-i - 1]==dot)&&(map[i][i]==map[i+1][SIZE-i - 1-1])){
+                count++;
+            }
+            if (count == DOTS_TO_WIN)
+                    return true;
         }
 
-        //Проверка диагоналей
-        if(map[0][0] == dot && map [1][1]== dot && map [2][2] == dot){
-            return true;
+        //проверка строк
+
+        for (int i = 0; i < map.length-1; i++) {
+            count=1;
+            for (int j = 0; j < map[i].length-1; j++) {
+
+          if ((map[i][j]== dot)&&(map[i][j]== map[i][j+1])){
+              count++;
+              if (count == DOTS_TO_WIN)
+                  return true;
+          }
+
+       }
+            }
+        //проверка столбцов
+
+        for (int i = 0; i < map.length-1; i++) {
+            count=1;
+            for (int j = 0; j < map[i].length-1; j++) {
+
+                if ((map[j][i]== dot)&&(map[j][i]== map[j+1][i])){
+                    count++;
+                    if (count == DOTS_TO_WIN)
+                        return true;
+                }
+
+            }
         }
-        if(map[2][0] == dot && map [1][1]== dot && map [0][2] == dot){
-            return true;
-        }
+
         return false;
     }
 
