@@ -1,27 +1,15 @@
 package HomeWork_6;
 
-public class Cat  extends Animal {
-    private String color;
+public class Cat extends Animal{
 
-    public Cat(String name, String color) {
+    public Cat(String name) {
         super(name);
-        this.color = color;
-    }
+        this.runLimit = 200;
 
-    public String getColor() {
-        return color;
     }
 
     @Override
-    public void voice() {
-        System.out.println("кот мявкает");
-    }
-    public void voice(String mood){
-        System.out.println("meow wich mood " + mood);
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-
+    protected void swimming(int obstacleLength) {
+        System.out.println("Коты не умеют плавать!");
     }
 }

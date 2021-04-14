@@ -1,10 +1,20 @@
 package HomeWork_6;
 
-public class Animal {
-    protected String name;
+abstract public class Animal {
+    private String name;
+    private int obstacleLength;
+    protected int runLimit = 0;
+    protected int swimLimit = 0;
+    static int count = 0;
+
+    public static void countAnimals(){
+        System.out.println(count);
+    }
 
     public Animal(String name) {
         this.name = name;
+        count++;
+
     }
 
     public String getName() {
@@ -15,7 +25,30 @@ public class Animal {
         this.name = name;
     }
 
-    public void voice(){
-        System.out.println("Животное что-то говорит");
+
+    protected void run(int obstacleLength) {
+        if (runLimit > 0 && obstacleLength <= runLimit) {
+            System.out.println(getName() + " Пробежал " + obstacleLength + " метров ");
+        }
+         else {
+           System.out.println(this.name + " не сможет пробежать столько!");
+        }
+    }
+
+    protected void swimming(int obstacleLength){
+
+        if (swimLimit > 0 && obstacleLength <= swimLimit) {
+            System.out.println(getName() + " Проплыл " + obstacleLength + " метров ");
+
+        } else {
+            System.out.println(this.name + " не сможет проплыть столько!");
+        }
     }
 }
+
+/*
+1. Создать классы Собака и Кот с наследованием от класса Животное.
+2. Все животные могут бежать и плыть. В качестве параметра каждому методу передается длина препятствия. Результатом выполнения действия будет печать в консоль. (Например, dogBobik.run(150); -> 'Бобик пробежал 150 м.');
+3. У каждого животного есть ограничения на действия (бег: кот 200 м., собака 500 м.; плавание: кот не умеет плавать, собака 10 м.).
+4. * Добавить подсчет созданных котов, собак и животных.
+ */
