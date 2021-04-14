@@ -7,8 +7,8 @@ public class BasicConstructions {
         sumLimit(10, 20);
         positiveOrNegative(-4);
         positiveOrNegative(0);
-        trueOrFalse(-5);
-        trueOrFalse(5);
+        System.out.println(isNegative(-5));
+        System.out.println(isNegative(5));;
         printString("Hello World", 5);
         printString("Hello", 2);
         leapНear(2020);
@@ -16,13 +16,16 @@ public class BasicConstructions {
 
     }
 
-
-    private static void sumLimit(int a, int b) {
-
-        if (a + b >= 10 && a + b <= 20) {
+//1. Написать метод, принимающий на вход два целых числа и проверяющий,
+// что их сумма лежит в пределах от 10 до 20 (включительно), если да – вернуть true, в противном случае – false.
+    private static boolean sumLimit(int a, int b) {
+        int sum = a+b;
+        if (sum >= 10 && sum <= 20) {
             System.out.println("true");
+            return true;
         } else {
             System.out.println("false");
+            return false;
         }
     }
 
@@ -34,18 +37,24 @@ public class BasicConstructions {
             System.out.println("Передали число отрицательное");
         }
     }
+/*
+Написать метод, которому в качестве параметра передается целое число. Метод должен вернуть true, если число отрицательное, и вернуть false если положительное.
 
-    private static boolean trueOrFalse(int a) {
-        boolean b = false;
+1 )Название. isNegative подойдет лучше всего :) сейчас метод вернет true, если число положительно. А хотим наоборот
+
+else; - можно не писать. Оно не сработает
+
+можно сразу писать return true; return false; без объявления переменных
+ */
+    private static boolean isNegative(int a) {
 
         if (a >= 0) {
-            b = true;
+            return false;
         }
-        else;
 
-        System.out.println(b);
-        return b;
+        return true;
     }
+
 
     private static void printString(String a,int b ) {
         for (int i = 0; i < b; i++) {
