@@ -22,18 +22,28 @@ public class MyApp {
 //        plate.fillPlate(plate,100);
 //        plate.info();
 
-        Plate plate = new Plate(80);
-        Cat [] cats = new Cat[5];
-        cats[0] = new Cat("vaska", 15);
-        cats[1] = new Cat("muska", 25);
-        cats[2] = new Cat("murzik", 20);
-        cats[3] = new Cat("nafany", 30);
-        cats[4] = new Cat("treisy", 10);
+//        Plate plate = new Plate(80);
+//        Cat [] cats = new Cat[5];
+//        cats[0] = new Cat("vaska", 15);
+//        cats[1] = new Cat("muska", 25);
+//        cats[2] = new Cat("murzik", 20);
+//        cats[3] = new Cat("nafany", 30);
+//        cats[4] = new Cat("treisy", 10);
+//
+//        for (int i = 0; i < 5; i++) {
+//            cats[i].eat(plate);
+//            plate.info();
+//            cats[i].info();
+//        }
+//
 
-        for (int i = 0; i < 5; i++) {
-            cats[i].eat(plate);
-            plate.info();
-            cats[i].info();
-        }
-    }
+       // Cat cat = new Cat("aaa",10);
+        Cat cat1 = new Cat(",,,",5);
+        Plate plate = new Plate(3);
+
+        //cat.eat(plate);
+        //cat.info();
+        cat1.eat(plate);
+        cat1.info();
+}
 }

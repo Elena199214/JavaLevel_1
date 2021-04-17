@@ -24,6 +24,7 @@ public class Plate {
                 System.out.println("В миске не хватает еды!");
             } else {
                 foodCount -= appetite;
+
             }
         }
 
