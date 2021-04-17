@@ -19,11 +19,11 @@ public class Plate {
             this.foodCount = foodCount;
         }
 
-        public void decreaseCount(int apetitte) {
-            if (foodCount < apetitte) {
+        public void decreaseCount(int appetite) {
+            if (foodCount < appetite) {
                 System.out.println("В миске не хватает еды!");
             } else {
-                foodCount -= apetitte;
+                foodCount -= appetite;
             }
         }
 

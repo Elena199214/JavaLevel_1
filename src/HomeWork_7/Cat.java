@@ -1,11 +1,11 @@
 package HomeWork_7;
 
 public class Cat {
-    private  String name;
-    private  String color;
+    private String name;
+    private String color;
     private int age;
     private int appetite;
-    private static boolean satiety;
+    private boolean satiety;
 
     public Cat(String name, String color, int age) {
         super();
@@ -14,12 +14,16 @@ public class Cat {
         this.color = color;
         this.age = age;
     }
+
     public Cat(String name, int appetite) {
         this.name = name;
+        this.color = "Белый";
+        this.age = 3;
         this.appetite = appetite;
 
 
     }
+
     public Cat() {
         this("Степан", "Бандитского", 3);
         System.out.println("Создаем кота, которого видим впервые");
@@ -43,15 +47,19 @@ public class Cat {
     public String getName() {
         return this.name;
     }
+
     public String getColor() {
         return this.color;
     }
+
     public int getAge() {
         return this.age;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public void setColor(String color) {
         this.color = color;
     }
@@ -68,6 +76,7 @@ public class Cat {
         validateAge(age);
         this.age = age;
     }
+
     private void validateAge(int age) {
         if (age < 0) {
             throw new IllegalArgumentException("Возраст не может быть отрицательным");
@@ -77,12 +86,25 @@ public class Cat {
         }
     }
 
+
     public void eat(Plate plate) {
         plate.decreaseCount(this.appetite);
+        if (this.appetite == Plate.decreaseCount) {
+            satiety = true;
+        }
+
+//    public boolean catSatiety(){
+//        if (this.appetite>0) {
+//            satiety = true;
+//            return true;
+//        }
+//        return false;
+//    }
 
         //plate.setFoodCount(plate.getFoodCount() - this.getAppetite());
-    }
 
+
+    }
 }
 /*
 1. Расширить задачу про котов и тарелки с едой.

@@ -33,6 +33,7 @@ public class MyApp {
         for (int i = 0; i < 5; i++) {
             cats[i].eat(plate);
             plate.info();
+            cats[i].info();
         }
     }
 }
