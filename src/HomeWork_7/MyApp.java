@@ -5,45 +5,25 @@ public class MyApp {
 
         //Покорми кота
 
-//        Cat cat = new Cat();
-//        cat.setAppetite(30);
-//        Plate plate = new Plate(150);
-//
-//
-//
-//        plate.setFoodCount(plate.getFoodCount() - cat.getAppetite());
-//        cat.info();
-//        plate.info();
-//
-//        cat.eat(plate);
-//
-//        cat.info();
-//        plate.info();
-//        plate.fillPlate(plate,100);
-//        plate.info();
 
-//        Plate plate = new Plate(80);
-//        Cat [] cats = new Cat[5];
-//        cats[0] = new Cat("vaska", 15);
-//        cats[1] = new Cat("muska", 25);
-//        cats[2] = new Cat("murzik", 20);
-//        cats[3] = new Cat("nafany", 30);
-//        cats[4] = new Cat("treisy", 10);
-//
-//        for (int i = 0; i < 5; i++) {
-//            cats[i].eat(plate);
-//            plate.info();
-//            cats[i].info();
-//        }
-//
+       Plate plate = new Plate(70);
+        Cat [] cats = new Cat[5];
+        cats[0] = new Cat("vaska", 15);
+        cats[1] = new Cat("muska", 25);
+        cats[2] = new Cat("murzik", 20);
+        cats[3] = new Cat("nafany", 30);
+        cats[4] = new Cat("treisy", 10);
 
-       // Cat cat = new Cat("aaa",10);
-        Cat cat1 = new Cat(",,,",5);
-        Plate plate = new Plate(3);
+        System.out.println("В миске " + plate.getFoodCount() + " грамм кошачьего корма, изначально она полная.\nКотики по очереди будут есть из миски.");
 
-        //cat.eat(plate);
-        //cat.info();
-        cat1.eat(plate);
-        cat1.info();
-}
+        for (Cat a : cats) {
+
+            if  (a.isSatiety()== false) {
+                    a.eat(plate);
+                    a.info();
+                    plate.info();
+            }
+        }
+        System.out.println("Некоторые котики наелись, в миске осталось " + plate.getFoodCount() + " грамм кошачьего корма.");
+    }
 }

@@ -2,16 +2,25 @@ package HomeWork_7;
 
 public class Plate {
 
+        private String name;
         private int foodCount;
         private int amountFeed;
 
 
+    public Plate(int foodCount) {
+        this.name = "Самая большая";
+        this.foodCount = foodCount;
+    }
 
-        public Plate(int foodCount) {
-            this.foodCount = foodCount;
-        }
+    public String getName() {
+        return name;
+    }
 
-        public int getFoodCount() {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getFoodCount() {
             return foodCount;
         }
 
@@ -20,26 +29,22 @@ public class Plate {
         }
 
         public void decreaseCount(int appetite) {
-            if (foodCount < appetite) {
-                System.out.println("В миске не хватает еды!");
-            } else {
                 foodCount -= appetite;
-
             }
-        }
 
         public void info(){
             System.out.println(toString());
         }
 
-        @Override
-        public String toString() {
-            return "Plate{" +
-                    "foodCount=" + foodCount +
-                    '}';
-        }
+    @Override
+    public String toString() {
+        return "Plate{" +
+                "name='" + name + '\'' +
+                ", foodCount=" + foodCount +
+                '}';
+    }
 
-        public void fillPlate(Plate plate, int amountFeed){
+    public void fillPlate(Plate plate, int amountFeed){
             foodCount += amountFeed;
             System.out.println("Насыпали корм в миску");
 

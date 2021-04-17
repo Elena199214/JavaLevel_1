@@ -5,7 +5,7 @@ public class Cat {
     private String color;
     private int age;
     private int appetite;
-    private boolean satiety = false;
+    private boolean satiety;
 
     public Cat(String name, String color, int age) {
         super();
@@ -20,6 +20,7 @@ public class Cat {
         this.color = "Белый";
         this.age = 3;
         this.appetite = appetite;
+        this.satiety = false;
 
 
     }
@@ -87,19 +88,28 @@ public class Cat {
     }
 
 
+    public boolean isSatiety() {
+        return satiety;
+    }
+
+    public void setSatiety(boolean satiety) {
+        this.satiety = satiety;
+    }
+
     public void eat(Plate plate) {
-        plate.decreaseCount(this.appetite);
+        if (plate.getFoodCount() < appetite) {
+            System.out.println("В миске не хватает еды! Можно наполнить миску, вызвав метод fillPlate(Plate plate, int amountFeed)");
+        } else {
+            plate.decreaseCount(this.appetite);
+            satiety = true;
         }
 
-    public boolean catSatiety(){
-        return satiety = true;
 
-    }
-
-        //plate.setFoodCount(plate.getFoodCount() - this.getAppetite());
+//plate.setFoodCount(plate.getFoodCount() - this.getAppetite());
 
 
     }
+}
 /*
 1. Расширить задачу про котов и тарелки с едой.
 2. Сделать так, чтобы в тарелке с едой не могло получиться отрицательного количества еды (например, в миске 10 еды, а кот пытается покушать 15-20).
