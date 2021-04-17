@@ -5,7 +5,7 @@ public class Cat {
     private  String color;
     private int age;
     private int appetite;
-    private static int satiety=0;
+    private static boolean satiety;
 
     public Cat(String name, String color, int age) {
         super();
@@ -14,8 +14,11 @@ public class Cat {
         this.color = color;
         this.age = age;
     }
-    public Cat(String name, int age) {
-        this(name, "Бандитского", age);
+    public Cat(String name, int appetite) {
+        this.name = name;
+        this.appetite = appetite;
+
+
     }
     public Cat() {
         this("Степан", "Бандитского", 3);
@@ -33,6 +36,7 @@ public class Cat {
                 ", color='" + color + '\'' +
                 ", age=" + age +
                 ", appetite=" + appetite +
+                ", satiety=" + satiety +
                 '}';
     }
 
@@ -75,7 +79,7 @@ public class Cat {
 
     public void eat(Plate plate) {
         plate.decreaseCount(this.appetite);
-        satiety +=this.appetite;
+
         //plate.setFoodCount(plate.getFoodCount() - this.getAppetite());
     }
 

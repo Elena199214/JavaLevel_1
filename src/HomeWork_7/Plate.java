@@ -3,6 +3,8 @@ package HomeWork_7;
 public class Plate {
 
         private int foodCount;
+        private int amountFeed;
+
 
 
         public Plate(int foodCount) {
@@ -34,6 +36,12 @@ public class Plate {
             return "Plate{" +
                     "foodCount=" + foodCount +
                     '}';
+        }
+
+        public void fillPlate(Plate plate, int amountFeed){
+            foodCount += amountFeed;
+            System.out.println("Насыпали корм в миску");
+
         }
 
 }
