@@ -159,24 +159,24 @@ checkBalance([1, 1, 1, ||| 2, 1]) → true, т.е. 1 + 1 + 1 = 2 + 1
                     }
                 }
             }
-                if (sumLeft < sumRight) {
-                    for (int i = array.length / 2; i < array.length; i++) {
-                        sumLeft += array[i];
-                        sumRight -= array[i];
-                        if (sumLeft == sumRight) {
-                            result = true;
-                            break;
-                        }
-
+            if (sumLeft < sumRight) {
+                for (int i = array.length / 2; i < array.length; i++) {
+                    sumLeft += array[i];
+                    sumRight -= array[i];
+                    if (sumLeft == sumRight) {
+                        result = true;
+                        break;
                     }
-                } else {
-                    result = true;
+
                 }
+            } else {
+                result = true;
             }
-            System.out.println("Массив: " + Arrays.toString(array) +" "+ result);
+        }
+        System.out.println("Массив: " + Arrays.toString(array) +" "+ result);
 
         return result;
-}
+    }
 
 
 /* 8. *** Написать метод, которому на вход подается одномерный массив и число n (может быть положительным, или отрицательным),
@@ -186,5 +186,3 @@ checkBalance([1, 1, 1, ||| 2, 1]) → true, т.е. 1 + 1 + 1 = 2 + 1
  При каком n в какую сторону сдвиг можете выбирать сами.*/
 
 }
-
-
